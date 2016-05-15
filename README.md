@@ -36,33 +36,47 @@ allowed, I'm only using them for demonstration purposes.)
 ```javascript
 {
 
-  // The title of the produced DMG, which will be shown when mounted
+  // The title of the produced DMG, which will be shown when mounted (Required)
   "title": "Test Title",
 
   // Path to your icon, which will be shown when mounted
   "icon": "TestIcon.icns",
 
-  // Path to your background
+  // Path to your background (Required)
   "background": "TestBkg.png",
 
-  // Size of all the icons inside the DMG
+  // Size of all the icons inside the DMG (Required)
   "icon-size": 80,
   
   // Window options
   "window": {
     // Position when opened
-    "position": { "x": 250, "y": 250 },
+    "position": {
+      // X position relative to bottom of the screen (Required)
+      "x": 250,
+
+      // Y position relative to bottom of the screen (Required)
+      "y": 250
+    },
 
     // Window size
-    "size": { "width": 500, "height": 500 }
+    "size": {
+      // Window width (Required) 
+      "width": 500,
+
+      // Window height (Required) 
+      "height": 500
+    }
   },
 
+  // DMG contents  (Required)
   "contents": [
 
     // This is the contents of your DMG.
 
     // Each entry has a position specified by
     // X and Y in the center of its icon.
+    // All properties on entries are required.
 
     // `type: link` creates a link to the specified target
     { "x": 448, "y": 344, "type": "link", "path": "/Applications" },
